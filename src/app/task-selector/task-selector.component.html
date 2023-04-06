@@ -1,0 +1,18 @@
+<div style="display: inline-flex">
+  <div style="width: 50%">
+    <app-task [configuration]="configuration[index].A"
+              [description]="ATask.title"
+              [imageUrl]="ATask.imageUrl"
+              [story]="ATask.story"
+              [tasks]="ATask.subTasks"
+              (thisWayBraveAdventurer)="taskSelected.emit('A')"></app-task>
+  </div>
+  <div style="width: 50%">
+    <app-task [configuration]="configuration[index].B"
+              [description]="BTask.title"
+              [imageUrl]="BTask.imageUrl"
+              [story]="BTask.story"
+              [tasks]="BTask.subTasks"
+              (thisWayBraveAdventurer)="taskSelected.emit('B')"></app-task>
+  </div>
+</div>

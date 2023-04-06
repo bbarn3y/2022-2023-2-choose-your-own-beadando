@@ -1,0 +1,32 @@
+<div class="text-center">
+  <img style="max-width: 100%; max-height: 300px"
+       [src]="imageUrl"/>
+</div>
+
+<p class="color-gray font-weight-bold text-center">
+  "{{ story }}"
+</p>
+
+<p class="color-gray font-weight-bold text-center">
+  <markdown
+    [data]="description">
+  </markdown>
+</p>
+
+<button mat-button (click)="thisWayBraveAdventurer.emit()">
+  Ezt választom
+</button>
+
+<mat-list>
+  <div mat-subheader>Feladatok</div>
+  <mat-list-item *ngFor="let task of tasks; let index = index">
+    <mat-icon matListItemIcon
+              *ngIf="true"
+              style="min-width: 40px">
+      {{ configuration.subTasks[index] ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+    <div matListItemTitle>{{task.text}}</div>
+    <div matListItemLine
+         class="text-right"
+         style="min-width: 50px">{{task.xp}} pont</div>
+  </mat-list-item>
+</mat-list>

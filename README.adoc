@@ -1,0 +1,33 @@
+= Choose your own +++<s>adventure</s>+++ beadando
+
+== Tasks
+
+=== Task 1
+
+==== A - Component
+
+==== B - Template
+
+=== Task 2
+
+==== A - Form validation
+
+==== B - Styling
+
+=== Task 3
+
+==== A - Pipe
+
+==== B - Translate
+
+=== Task 4
+
+==== A - Directive
+
+==== B - Guard
+
+=== Task 5
+
+==== A - Drag & Drop
+
+==== B - Virtual scrolling
