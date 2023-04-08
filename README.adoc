@@ -10,9 +10,9 @@
 
 === Task 2
 
-==== A - Form validation
+==== A - Styling
 
-==== B - Styling
+==== B - Form validation
 
 === Task 3
 
@@ -24,7 +24,7 @@
 
 ==== A - Directive
 
-==== B - Guard
+==== B - Service
 
 === Task 5
 

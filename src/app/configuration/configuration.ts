@@ -63,14 +63,14 @@ export const configuration = [
         1: false,
         2: false,
         3: false,
-        4: false
+        4: true
       }
     },
     B: {
       subTasks: {
         1: false,
         2: false,
-        3: false,
+        3: true,
         4: false
       }
     },
@@ -79,7 +79,7 @@ export const configuration = [
   {
     A: {
       subTasks: {
-        1: false,
+        1: true,
         2: false,
         3: false,
         4: false
@@ -89,7 +89,7 @@ export const configuration = [
       subTasks: {
         1: false,
         2: false,
-        3: false,
+        3: true,
         4: false
       }
     },
