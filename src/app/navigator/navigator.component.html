@@ -1,33 +1,39 @@
-<ng-container *ngIf="!selectedTask">
+<ng-container>
   <ng-container *ngFor="let task of tasks; let index = index">
-    <ng-container *ngIf="index === currentIndex">
+    <ng-container *ngIf="index + 1 === currentIndex">
       <app-task-selector [index]="index"
                          [ATask]="tasks[index].A"
                          [BTask]="tasks[index].B"
-                         (taskSelected)="selectedTask = $event"></app-task-selector>
+                         [selectedTask]="selectedTask"
+                         (taskSelected)="selectTask($event)">
+        <!-- Solution -->
+        <mat-card *ngIf="selectedTask">
+          <mat-card-header style="font-size: 20px; margin-bottom: 20px">
+            {{ currentIndex }}. {{ selectedTask }} feladat megoldása
+          </mat-card-header>
+          <mat-card-content>
+            <ng-container [ngSwitch]="true">
+              <ng-container *ngSwitchCase="currentIndex === 0">
+                <ng-container *ngIf="selectedTask === 'A'; else oneB">
+                  <app-task1-a></app-task1-a>
+                </ng-container>
+                <ng-template #oneB>
+                  <app-task1-b></app-task1-b>
+                </ng-template>
+              </ng-container>
+              <ng-container *ngSwitchDefault>Code Default</ng-container>
+            </ng-container>
+          </mat-card-content>
+          <mat-card-footer class="text-center">
+            <button mat-button (click)="selectTask(undefined)">
+              Vissza
+            </button>
+            <button mat-button (click)="nextTask()">
+              Tovább
+            </button>
+          </mat-card-footer>
+        </mat-card>
+      </app-task-selector>
     </ng-container>
   </ng-container>
-</ng-container>
-
-<ng-container *ngIf="selectedTask">
-  Index: {{ currentIndex }}
-  Task: {{ selectedTask }}
-
-  <ng-container *ngSwitch="currentIndex">
-    <ng-container *ngSwitchCase="0">
-      <ng-container *ngIf="selectedTask === 'A'; else oneB">
-        <app-task1-a></app-task1-a>
-      </ng-container>
-      <ng-template #oneB>
-        <app-task1-b></app-task1-b>
-      </ng-template>
-    </ng-container>
-  </ng-container>
-
-  <button mat-button (click)="selectedTask = undefined">
-    Vissza
-  </button>
-  <button mat-button (click)="currentIndex = currentIndex + 1; selectedTask = undefined;">
-    Tovább
-  </button>
 </ng-container>

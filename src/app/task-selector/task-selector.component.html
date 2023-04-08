@@ -1,18 +1,28 @@
-<div style="display: inline-flex">
+<ng-template #taskSolution>
+  <ng-content></ng-content>
+</ng-template>
+
+<div style="display: inline-flex; width: 100%">
   <div style="width: 50%">
-    <app-task [configuration]="configuration[index].A"
+    <app-task *ngIf="selectedTask !== 'B'; else taskSolution"
+              [configuration]="configuration[index].A"
               [description]="ATask.title"
               [imageUrl]="ATask.imageUrl"
+              [selected]="selectedTask === 'A'"
               [story]="ATask.story"
               [tasks]="ATask.subTasks"
-              (thisWayBraveAdventurer)="taskSelected.emit('A')"></app-task>
+              (thisWayBraveAdventurer)="taskSelected.emit('A')">
+    </app-task>
   </div>
   <div style="width: 50%">
-    <app-task [configuration]="configuration[index].B"
+    <app-task *ngIf="selectedTask !== 'A'; else taskSolution"
+              [configuration]="configuration[index].B"
               [description]="BTask.title"
               [imageUrl]="BTask.imageUrl"
+              [selected]="selectedTask === 'B'"
               [story]="BTask.story"
               [tasks]="BTask.subTasks"
-              (thisWayBraveAdventurer)="taskSelected.emit('B')"></app-task>
+              (thisWayBraveAdventurer)="taskSelected.emit('B')">
+    </app-task>
   </div>
 </div>

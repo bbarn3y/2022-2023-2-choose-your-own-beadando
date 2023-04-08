@@ -9,9 +9,8 @@ import {configuration} from "src/app/configuration/configuration";
 export class TaskSelectorComponent implements OnInit {
   @Input() ATask!: Task;
   @Input() BTask!: Task;
-
   @Input() index!: number;
-
+  @Input() selectedTask?: 'A' | 'B';
   @Output() taskSelected: EventEmitter<'A' | 'B'> = new EventEmitter<'A' | 'B'>();
 
   configuration = configuration;

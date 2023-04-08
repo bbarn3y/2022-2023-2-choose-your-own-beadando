@@ -2,8 +2,7 @@ export const tasks = [
   {
     A: {
       imageUrl: 'assets/images/tasks/1/A/master-sword.jpg',
-      story: `Hősünk soha nem riadt vissza a harctől, így amikor a távolban meglátott egy kőbe szúrt kardot, azonnal
-      futásba kezdett, pár perc után botladozva, lihegve meg is érkezett céljához.`,
+      story: `Zöld`,
       subTasks: [
         {
           text: `Készíts egy új komponenst, amely egy képet tartalmaz:
@@ -26,12 +25,12 @@ export const tasks = [
         }
       ],
       title: `
-        ### Komponens
+        Komponens
       `
     },
     B: {
       imageUrl: 'assets/images/tasks/1/B/tree.jpg',
-      story: 'Hősünk pacifista beállítottságú, így inkább a közeli fára mászott fel nyersanyagokat gyűjteni.',
+      story: '',
       subTasks: [
         {
           text: `Készíts egy tömböt legalább 5 elemmel, amiben az egyes ágak adatait tárolod.
@@ -76,16 +75,79 @@ export const tasks = [
   },
   {
     A: {
-      imageUrl: '',
-      story: '',
-      subTasks: [],
-      title: ``
+      imageUrl: 'assets/images/tasks/3/A/nou.webp',
+      story: 'Példa: {{ "radahn" | reverse }} kimenete: "Nhadar"',
+      subTasks: [
+        {
+          text: `Készíts egy saját pipe-ot.
+          Hozz helyes döntést abban, hogy pure vagy impure pipe-ot kell-e itt használni.`,
+          xp: 1
+        },
+        {
+          text: `A pipe fordítsa meg a paraméterként fogadott sztringet,
+          mintha visszafelé olvasnánk.`,
+          xp: 1
+        },
+        {
+          text: `Az eredmény első betűje mindig legyen nagybetűs, akkor is,
+          ha az eredeti szövegben nem így volt.`,
+          xp: 1
+        },
+        {
+          text: `Definiálj a komponens TS részében egy tömböt:
+          ['Malenia', 'Mohg', 'Morgott']
+          A komponens inicializációjakor írasd ki konzolra a tömb elemeit revertálva,
+          a pipe használatával!
+          `,
+          xp: 1
+        }
+      ],
+      title: `Pipe`
     },
     B: {
-      imageUrl: '',
-      story: '',
-      subTasks: [],
-      title: ``
+      imageUrl: 'assets/images/tasks/3/B/babel.jpg',
+      story: 'Megjelenő szöveg: Jelenleg magyar nyelven jelenik meg az oldal.',
+      subTasks: [
+        {
+          text: `Integráld az ngx-translate (
+          https://www.npmjs.com/package/@ngx-translate/core,
+          https://www.npmjs.com/package/@ngx-translate/http-loader)
+          csomagot a projektbe.
+          Az AppModule-ban állítsd be, hogy mindenhol használható legyen.
+          Hozz létre legalább 2 nyelvi fájlt.`,
+          xp: 1
+        },
+        {
+          text: `A felületen jeleníts meg egy Materialos Select
+          (https://material.angular.io/components/select/overview)
+          elemet. Az elérhető opciók a támogatott nyelvek legyenek.
+          Maguk az opciók az éppen kiválasztott nyelven jelenítsék
+          meg az adott nyelvet (pl. magyar nyelv esetén a két opció
+          lehet "Angol" és "Magyar", angol nyelvnél pedig "English"
+          és "Hungarian").
+          Alapból legyen kiválasztva a default nyelv.
+          A kiválasztás módosításakor váltson nyelvet a felület.`,
+          xp: 1
+        },
+        {
+          text: `A kiválasztott nyelvet tárold el valahol (pl.: localStorage).
+          A program inicializációjakor az utoljára kiválasztott nyelven töltsd
+          be a felületet.
+          Figyelj arra, hogy akkor se szálljon el a program, amikor még nem
+          lett kiválasztva nyelv!`,
+          xp: 1
+        },
+        {
+          text: `A nyelvi fájlokban definiálj legalább egy kulcsot:
+          "CURRENT_LANGUAGE".
+          A nyelvválasztó felett jelenjen meg ehhez a kulcshoz tartozó fordítás:
+          "Jelenleg magyar nyelven jelenik meg az oldal."
+          A "magyar" szó interpolált legyen, tehát változóként helyettesítsd be a
+          2. részfeladatban már definiált nyelvi fordításokat.`,
+          xp: 1
+        },
+      ],
+      title: `Translate`
     },
   },
   {
@@ -115,5 +177,9 @@ export const tasks = [
       subTasks: [],
       title: ``
     },
+    preview: {
+      imageUrl: 'assets/images/preview/5.jpg',
+      text: 'Csak így tovább, már csak egy feladat van hátra...'
+    }
   }
 ]

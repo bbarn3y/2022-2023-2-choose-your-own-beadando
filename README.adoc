@@ -1,6 +1,6 @@
 = Choose your own +++<s>adventure</s>+++ beadando
 
-== Tasks
+== Feladatok
 
 === Task 1
 
@@ -31,3 +31,12 @@
 ==== A - Drag & Drop
 
 ==== B - Virtual scrolling
+
+== Pontozás
+
+Tehát, ha egy feladatnál az A és a B változat is
+teljesen elkészül, az 5 pontot ér.
+Ha az A vagy a B feladat teljesen elkészült, viszont
+a másik részfeladat nem vagy csak részben, az 4 pontot ér.
+Ha mindkét ág részben készül csak el, akkor a nagyobb
+pontszám lesz beszámolva.

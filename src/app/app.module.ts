@@ -17,10 +17,16 @@ import { Task1BComponent } from './tasks/1/B/task1-b.component';
 import {MatButtonModule} from "@angular/material/button";
 import {RouterModule} from "@angular/router";
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import {MatCardModule} from "@angular/material/card";
+import { SummaryComponent } from './summary/summary.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { PreviewComponent } from './preview/preview.component';
 
 const materialModules = [
   LayoutModule,
   MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
   MatGridListModule,
   MatIconModule,
   MatListModule
@@ -29,12 +35,14 @@ const materialModules = [
 @NgModule({
   declarations: [
     AppComponent,
-    TaskSelectorComponent,
     TaskComponent,
     NavigatorComponent,
     Task1AComponent,
     Task1BComponent,
-    MainMenuComponent
+    TaskSelectorComponent,
+    MainMenuComponent,
+    SummaryComponent,
+    PreviewComponent
   ],
   imports: [
     ...materialModules,
@@ -43,7 +51,6 @@ const materialModules = [
     BrowserAnimationsModule,
     MarkdownModule.forRoot(),
     RouterModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

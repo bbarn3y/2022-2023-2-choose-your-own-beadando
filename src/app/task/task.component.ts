@@ -9,6 +9,7 @@ export class TaskComponent implements OnInit {
   @Input() configuration!: { subTasks: any };
   @Input() description!: string;
   @Input() imageUrl!: string;
+  @Input() selected: boolean = false;
   @Input() story!: string;
   @Input() tasks!: { text: string; xp: number }[];
 

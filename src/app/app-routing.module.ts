@@ -1,29 +1,35 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {NavigatorComponent} from "src/app/navigator/navigator.component";
-import {Task1AComponent} from "src/app/tasks/1/A/task1-a.component";
-import {Task1BComponent} from "src/app/tasks/1/B/task1-b.component";
 import {MainMenuComponent} from "src/app/main-menu/main-menu.component";
+import {PageRoutes} from "src/app/_constants/page-routes";
+import {SummaryComponent} from "src/app/summary/summary.component";
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
+    path: PageRoutes.mainMenu,
     component: MainMenuComponent
   },
   {
-    path: 'tasks',
-    component: NavigatorComponent,
-    // children: [
-    //   {
-    //     path: '1',
-    //     component: Task1AComponent
-    //   },
-    //   {
-    //     path: '1B',
-    //     component: Task1BComponent
-    //   }
-    // ]
+    path: PageRoutes.summary,
+    component: SummaryComponent
+  },
+  {
+    path: `${PageRoutes.task}/:index/:task`,
+    component: NavigatorComponent
+  },
+  {
+    path: `${PageRoutes.task}/:index`,
+    component: NavigatorComponent
+  },
+  {
+    path: PageRoutes.task,
+    component: NavigatorComponent
+  },
+  {
+    path: '',
+    redirectTo: PageRoutes.mainMenu,
+    pathMatch: 'prefix'
   }
 ];
 

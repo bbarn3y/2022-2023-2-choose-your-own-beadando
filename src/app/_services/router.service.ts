@@ -1,16 +1,41 @@
 import { Injectable } from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Location} from "@angular/common";
+import {PageRoutes} from "src/app/_constants/page-routes";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RouterService {
 
-  constructor(private router: Router) { }
+  constructor(private route: ActivatedRoute,
+              private location: Location,
+              private router: Router) { }
 
-  routeToTask(index: number, way: 'A' | 'B') {
+  routeToMainMenu() {
     this.router.navigateByUrl(
-      `/tasks/${index}/${way}`
+      `/${PageRoutes.mainMenu}`
     );
+  }
+
+  routeToSummary() {
+    this.router.navigateByUrl(
+      `/${PageRoutes.summary}`
+    );
+  }
+
+  routeToTask(index: number, task?: 'A' | 'B') {
+    this.router.navigateByUrl(
+      `/${PageRoutes.task}/${index}${task ? ('/' + task) : ''}`
+    );
+  }
+
+  routeToTaskWithoutReload(index: number, task?: 'A' | 'B') {
+    const url = this.router
+      .createUrlTree(
+        task ? [PageRoutes.task, index, task] : ['task', index],
+        {relativeTo: this.route}
+      ).toString()
+    this.location.go(url);
   }
 }

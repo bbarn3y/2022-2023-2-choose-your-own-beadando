@@ -13,9 +13,12 @@
   </markdown>
 </p>
 
-<button mat-button (click)="thisWayBraveAdventurer.emit()">
-  Ezt választom
-</button>
+<div *ngIf="!selected"
+     class="text-center">
+  <button mat-raised-button (click)="thisWayBraveAdventurer.emit()">
+    Ezt választom
+  </button>
+</div>
 
 <mat-list>
   <div mat-subheader>Feladatok</div>
@@ -24,7 +27,8 @@
               *ngIf="true"
               style="min-width: 40px">
       {{ configuration.subTasks[index] ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
-    <div matListItemTitle>{{task.text}}</div>
+    <div matListItemTitle
+         style="flex-grow: 1">{{task.text}}</div>
     <div matListItemLine
          class="text-right"
          style="min-width: 50px">{{task.xp}} pont</div>
