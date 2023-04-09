@@ -4,9 +4,9 @@
              let-threshold="threshold">
   <div class="display-flex"
        [class.youAreHere]="threshold <= expectedResult && threshold + maxPoints * thresholdDifference > expectedResult ||
-                          (threshold > maxPoints && expectedResult > maxPoints)"
+                          (threshold >= maxPoints && expectedResult > maxPoints)"
        [ngStyle]="{'filter': threshold <= expectedResult && threshold + maxPoints * thresholdDifference > expectedResult ||
-                          (threshold > maxPoints && expectedResult > maxPoints) ? '' : 'blur(2px) grayscale(1)' }">
+                          (threshold >= maxPoints && expectedResult > maxPoints) ? '' : 'blur(2px) grayscale(1)' }">
     <div class="text-center"
          style="width: 150px; min-width: 150px">
       <img [src]="'assets/images/summary/' + level + '.png'"

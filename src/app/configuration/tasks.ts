@@ -8,10 +8,12 @@ export const tasks = [
           text: `Készíts egy új komponenst, amely inputként egy kép elérhetőségét
           (realtív URL-jét) várja.
 
-A felhaznált képeket helyezd be a projekt többi assetje közé.
-
 A Task1AComponent-be vegyél fel három darabot a komponensből, mindegyik más képpel
 legyen felparaméterezve.
+
+A tetszőlegesen választott képeket helyezd be a projekt többi assetje közé.
+
+Pluszpont jár viccess képek választásáért.
           `,
           xp: 1
         },
@@ -41,23 +43,28 @@ legyen felparaméterezve.
       story: '',
       subTasks: [
         {
-          text: `Készíts egy tömböt legalább 3 elemmel, amiben tárgyak adatait tárolod.
-           Az elemek adatai randomizált adatot minden tárgyról:
-           kép (random választott, helyezz a projekt asset-jei közé képeket),
-           név és érték (random egész szám).`,
+          text: `Készíts egy tömböt legalább 3 elemmel.
+           Tárold benne tárgyak adatait tárolod.
+
+Az elemek a következő adatokat tartalmazzák minden tárgyról:
+- kép (relatív URL, helyezz hozzá képeket a projekt asset-jei közé),
+- név (sztring)
+- érték (egész szám).
+
+Pluszpont jár viccess képek választásáért.`,
           xp: 1
         },
         {
           text: `Egy template segítségével definiáld, hogy az egyes tárgyakohz tartozó HTML
           elemek hogy nézzenenk ki.
-          A template-ben csak a kép illetve a név szerepeljen.
+          A template-ben csak a kép illetve a név szerepeljen, tetszőleges formázással.
           Jelenítsd is meg az előző feladatban létrehozott tárgyakat a template segítségével.
           `,
           xp: 1
         },
         {
           text: `Egy tárgy felé mozgatva az egeret jelenjen meg egy tooltip,
-          ami kiírja az tárgy értékét.
+          ami kiírja a tárgy értékét.
 
 Segítség: https://material.angular.io/components/tooltip/overview`,
           xp: 1
@@ -87,19 +94,22 @@ Segítség: https://material.angular.io/components/tooltip/overview`,
           text: `A táblázat legyen cikk-cakk-osan színezve.
           Azaz a páratlan számú sorok páros illetve a páros számú sorok páratlanadik számú
           mezői kapjanak egy enyhén sötét hátteret.
-          Használható például dinamikus osztály-hozzárendelés: [class.slightly-dark-bg]="..."`,
+
+Segítség: Használható például dinamikus osztály-hozzárendelés: [class.slightly-dark-bg]="..."`,
           xp: 1
         },
         {
-          text: `A felhasználó tudjon cellát kiválasztani, azaz, amikor a táblázat cellájára
-          kattint, a kiválasztott kapjon élén háttérszínt.
+          text: `A felhasználó tudjon cellákat kiválasztani, azaz, amikor a táblázat cellájára
+          kattint, a kattintott cella kapjon élénk háttérszínt.
+
+A kiválasztás újbóli kattintással legyen visszavonható.
           `,
           xp: 1
         },
         {
-          text: `A globális stílusokat tartalmazó less fájlban (styles.less) definiáld, hogy
+          text: `Globális stílusként definiáld, hogy
           az oldalon található össze táblázat (\`<table>\`) cellája (\`<td>\`) legyen egységes méretű
-          (például 50px x 50px).`,
+          (például 50px x 50px) és kapjon egy vékony bordert is.`,
           xp: 1
         },
       ],
@@ -112,10 +122,16 @@ Segítség: https://material.angular.io/components/tooltip/overview`,
         {
           text: `Készíts egy reaktív űrlapot.
           Az űrlap tartalmazzon 3 mezőt:
-          szoftver neve (sztring), aktivációs kulcs (sztring), érvényesség (date).
-          Az űrlaphoz hozz létre egy FormGroup-ot is TypeScriptben, amit köss
-          is össze ( [formGroup]="" ) a .html fájlban létrehozott űrlappal.
-          Segítség: https://angular.io/guide/reactive-forms`,
+
+- szoftver neve (sztring)
+- aktivációs kulcs (sztring)
+- érvényesség (date).
+
+Az űrlaphoz hozz létre egy FormGroup-ot is TypeScriptben, amit köss
+is össze ( [formGroup]="" ) a .html fájlban létrehozott űrlappal.
+
+Segítség: https://angular.io/guide/reactive-forms
+https://material.angular.io/components/datepicker/overview`,
           xp: 1
         },
         {
@@ -125,7 +141,7 @@ Segítség: https://material.angular.io/components/tooltip/overview`,
 - Az aktivációs kulcsot a következő formátumban kelljen megadni:
 XXXX-XXXX-XXXX, ahol az X lehet szám vagy nagybetű.
 
- A fenti validációkhoz használd az Angular alapvalidátorait, nem szükséges
+ A fenti ellenőrzésekhez használd az Angular alap validátorait, nem szükséges
 sajátot létrehozni.`,
           xp: 1
         },
@@ -159,28 +175,38 @@ sajátot létrehozni.`,
       subTasks: [
         {
           text: `Készíts egy saját pipe-ot.
-          A további részfeladatok alapján hozz helyes döntést abban,
-          hogy pure vagy impure pipe-ot kell-e itt használni.`,
+          A többi részfeladat alapján hozz helyes döntést abban,
+          hogy pure vagy impure pipe-ot érdemes-e itt használni.`,
           xp: 1
         },
         {
           text: `A pipe fordítsa meg a paraméterként fogadott sztringet,
           mintha azt visszafelé olvasnánk.
-          A komponenshez tartozó HTML-ben szűrj be egy példát a pipe működésére.`,
-          xp: 1
-        },
-        {
-          text: `Az eredmény első betűje mindig legyen nagybetűs, akkor is,
-          ha az eredeti szövegben nem így volt.`,
+
+Az eredmény első betűje mindig legyen nagybetűs a többi pedig
+kisbetűs, akkor is, ha az eredeti szövegben nem így volt.
+
+A komponenshez tartozó HTML-be szúrj be egy példát a pipe működésére.`,
           xp: 1
         },
         {
           text: `Definiálj a komponens TS részében egy tömböt:
-          ['Malenia', 'Mohg', 'Morgott']
-          A komponens inicializációjakor írasd ki konzolra a tömb elemeit revertálva,
-          a pipe használatával!`,
+
+['Malenia', 'Mohg', 'Morgott']
+
+A komponens inicializációjakor írasd ki konzolra a tömb elemeit revertálva,
+a pipe használatával!`,
           xp: 1
-        }
+        },
+        {
+          text: `Helyezz el a felületen egy \`<input>\` mezőt és egy gombot.
+Gombnyomásra az \`<input>\` mező tartalmának revertált verzióját szúrd be egy
+(alapból üres) tömbbe. (A tömb mérete minden gombnyomásra 1-el nő.)
+
+A tömb aktuális tartalmát listaelemekként (\`<ul>\` > \`<li>\`) jelenítsd is meg
+a felületen. `,
+          xp: 1
+        },
       ],
       title: `Pipe`
     },
@@ -189,12 +215,15 @@ sajátot létrehozni.`,
       story: 'Megjelenő szöveg: Jelenleg magyar nyelven jelenik meg az oldal.',
       subTasks: [
         {
-          text: `Integráld az ngx-translate (
+          text: `Integráld az ngx-translate és a hozzá tartozó http-loader (
           https://www.npmjs.com/package/@ngx-translate/core,
           https://www.npmjs.com/package/@ngx-translate/http-loader)
-          csomagot a projektbe.
-          Az AppModule-ban állítsd be, hogy mindenhol használható legyen.
-          Hozz létre legalább 2 nyelvi fájlt.`,
+          csomagokat a projektbe.
+
+Az AppModule-ban konfiguráld be a TranslateModule-t, hogy a fordításokat
+mindenhol használni lehessen a projektben.
+
+Hozz létre legalább 2 nyelvi fájlt.`,
           xp: 1
         },
         {
@@ -202,11 +231,13 @@ sajátot létrehozni.`,
           (https://material.angular.io/components/select/overview)
           elemet. Az elérhető opciók a támogatott nyelvek legyenek.
           Maguk az opciók az éppen kiválasztott nyelven jelenítsék
-          meg az adott nyelvet (pl. magyar nyelv esetén a két opció
+          meg a a nyelveket (pl. magyar nyelv esetén a két opció
           lehet "Angol" és "Magyar", angol nyelvnél pedig "English"
           és "Hungarian").
-          Alapból legyen kiválasztva a default nyelv.
-          A kiválasztás módosításakor váltson nyelvet a felület.`,
+
+Alapból legyen kiválasztva a default nyelv.
+
+A kiválasztás módosításakor váltson nyelvet a felület.`,
           xp: 1
         },
         {
@@ -220,8 +251,8 @@ sajátot létrehozni.`,
         {
           text: `A nyelvi fájlokban definiálj egy új kulcsot:
           "CURRENT_LANGUAGE".
-          A nyelvválasztó felett jelenjen meg ehhez a kulcshoz tartozó fordítást,
-          magyar nyelv esetén:
+          A nyelvválasztó felett jelenjen meg a kulcshoz tartozó fordítás,
+          pl. magyar nyelv esetén:
           "Jelenleg magyar nyelven jelenik meg az oldal."
           A "magyar" szó interpolált legyen, tehát változóként helyettesítsd be a
           2. részfeladatban már definiált nyelvi fordításokat.
@@ -239,10 +270,12 @@ Segítség: https://www.vitamindev.com/angular/how-to-use-parameters-in-ngx-tran
       story: '11223344-55667788',
       subTasks: [
         {
-          text: `Készíts egy bankszámlaszámot validáló direktívát, amely csak \`<input>\`
+          text: `Készíts egy direktívát, amely csak \`<input>\`
                 mezőkre helyezhető.
-                Helyezz el egy példa input mezőt a felületen a direktívával, amin egyből
-                tesztelhető annak működése.
+                A direktíva célja bankszámlaszámok validálása lesz.
+
+Helyezz el egy példa input mezőt a felületen a direktívával, amin egyből
+tesztelhető lesz majd annak működése.
 
 Segítség: selector.
           `,
@@ -260,7 +293,7 @@ Segítség: selector.
           "12345678 12345678 12345678" formátumú bankszámlaszámot ír be a felhasználó,
           akkor a direktíva automatikusan alakítsa "12345678-12345678" vagy
           "12345678-12345678-12345678" formátumra az input értékét.
-          Tehát a space karaktereket cserélje "-" karakterre ebben a két esetben.
+          Tehát a space karaktereket cserélje "-" karakterekre ebben a két esetben.
           `,
           xp: 1
         },
@@ -295,11 +328,14 @@ Segítség: selector.
           xp: 1
         },
         {
-          text: `Amennyiben már készült mentés az előző lépésben, akkor az oldal
+          text: `Amennyiben már készült mentés az előző feladat alapján, akkor az oldal
           újratöltésekor automatikusan navigáljuk a felhasználót az utoljára
           megtekintett lépésre.
-          Tehát például, ha a "/task/4" URL-t próbáljuk megnyitni, de azt tároltuk
-          el, hogy utoljára a 2. lépés nézte, akkor navigáljuk át a 2. lépésre!
+
+Tehát például, ha a "/task/4" URL-t próbáljuk megnyitni, de azt tároltuk
+el, hogy utoljára a 2. lépést nézte, akkor navigáljuk át a 2. lépésre!
+
+Ezt csak egyszer tegyük meg: az oldal betöltésekor!
           `,
           xp: 1
         },
@@ -308,7 +344,7 @@ Segítség: selector.
           nem létezik (>5) akkor ugorjon fel egy üzenet, ami erről tájékoztatja a usert.
           Pl.: http://localhost:4200/task/6
 
-Használható például a snackbar az üzenet megjelenítésére:
+Az üzenet megjelenítésére használd a Material SnackBar funkcióját:
 https://material.angular.io/components/snack-bar/overview
           `,
           xp: 1
@@ -327,7 +363,7 @@ https://material.angular.io/components/snack-bar/overview
           random személy adatait generálja.
           Pl.: generator.service.ts
 
-Az elemek a következő mezőkkel rendelkezzenek:
+A személyek a következő mezőkkel rendelkezzenek:
 - "name" (string)
 - "age" (number)
 - "description" (string)
@@ -343,18 +379,22 @@ reális (de random) értékeket tartalmazzon.`,
         },
         {
           text: `A felületen jelenjen meg két konténer.
-          Alapból a baloldali konténerben szerepeljen 10 kártya a személyek nevével.
-          A konténerek között húzogathatóak legyenek a személyek, tehát a baloldali
-          konténerből lehessen áthúzni a személyt a jobboldaliba, valamint vissza.
-          A kártyákat ne lehessen a konténereken kívül dobni.
+          Alapból a baloldali konténerben szerepeljen 10 kártya a generált személyek nevével.
+
+A konténerek között húzogathatóak legyenek a személyek, tehát a baloldali
+konténerből lehessen áthúzni a személyt a jobboldaliba, valamint vissza.
+A kártyákat ne lehessen a konténereken kívül dobni.
 
 Segítség: https://material.angular.io/cdk/drag-drop/overview`,
           xp: 1
         },
         {
-          text: `Amikor már legalább 5 ember átkerült jobb oldalra, akkor a
-          komponens háttere váltson zöldre valamint jelenjen meg a következő szöveg:
-          "Kiválasztásra került a minimálisan szükséges személy!".`,
+          text: `Amikor már legalább 5 ember átkerült jobb oldalra,
+          jelenjen meg a következő szöveg a felületen:
+          "Kiválasztásra került a minimálisan szükséges számú személy!".
+
+Ez a szöveg tűnjön el, amennyiben visszahúzunk személyeket balra és
+újra 5-nél kevesebb személy szerepel a jobb oldali konténerben.`,
           xp: 1
         },
       ],
@@ -368,11 +408,14 @@ Segítség: https://material.angular.io/cdk/drag-drop/overview`,
           text: `Készíts egy service-t, amely paraméterként megadott számú
           random személy adatait generálja.
           Pl.: generator.service.ts
-          Az elemek a következő mezőkkel rendelkezzenek:
-          "name" (string), "age" (number), "description" (string)
-          A generálás legyen randomizált és legalább az age mező nagyjából
-          reális (de random) értékeket tartalmazzon.
-          `,
+
+A személyek a következő mezőkkel rendelkezzenek:
+- "name" (string)
+- "age" (number)
+- "description" (string)
+
+A generálás legyen randomizált és legalább az age mező nagyjából
+reális (de random) értékeket tartalmazzon.`,
           xp: 1
         },
         {
@@ -393,7 +436,7 @@ Segítség: https://material.angular.io/cdk/scrolling/overview`,
           text: `A táblázatnak legyen egy 3. oszlopa, egy gombbal, amelyre kattintva
           felugró üzenetben jelenjen meg az adott személy "description" mezője.
 
-Például használható a materialos snackbar:
+A felugró üzenethez használható például a materialos snackbar:
 https://material.angular.io/components/snack-bar/overview`,
           xp: 1
         }
