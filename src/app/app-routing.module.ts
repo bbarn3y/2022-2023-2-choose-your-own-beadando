@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {NavigatorComponent} from "src/app/navigator/navigator.component";
-import {MainMenuComponent} from "src/app/main-menu/main-menu.component";
 import {PageRoutes} from "src/app/_constants/page-routes";
 import {SummaryComponent} from "src/app/summary/summary.component";
 
 const routes: Routes = [
-  {
-    path: PageRoutes.mainMenu,
-    component: MainMenuComponent
-  },
   {
     path: PageRoutes.summary,
     component: SummaryComponent
@@ -28,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: PageRoutes.mainMenu,
+    redirectTo: PageRoutes.task,
     pathMatch: 'prefix'
   }
 ];

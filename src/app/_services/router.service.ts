@@ -12,12 +12,6 @@ export class RouterService {
               private location: Location,
               private router: Router) { }
 
-  routeToMainMenu() {
-    this.router.navigateByUrl(
-      `/${PageRoutes.mainMenu}`
-    );
-  }
-
   routeToSummary() {
     this.router.navigateByUrl(
       `/${PageRoutes.summary}`
